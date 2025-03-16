@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="col-md-8 text-end">
-                    <button type="button" class="btn btn-primary">
+                    <button id="btn-add" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-modal">
                         <i class="bi bi-plus-circle"></i>
                         Add Product
                     </button>
@@ -105,7 +105,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Product details</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -124,7 +124,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Product</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -152,7 +152,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Comfirm Delete</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -162,6 +162,34 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button id="deleteChanges" type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="adđ-modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Product</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editProductForm">
+                            <div class="mb-3">
+                                <label for="add-name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="add-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-price" class="form-label">Price</label>
+                                <input type="text" class="form-control" id="add-price">
+                            </div>
+                            <div class="mb-3">
+                                <label for="add-status" class="form-label">Status</label>
+                                <input type="text" class="form-control" id="add-status" value="In Stock">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="addChanges" data-bs-dismiss="modal">Save</button>
+                        </form>
                     </div>
                 </div>
             </div>

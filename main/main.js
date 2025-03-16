@@ -51,21 +51,21 @@ $(document).ready(function () {
         display(fillerProduct)
     })
 
-    $(document).on("click", ".view", function() {
+    $(document).on("click", ".view", function () {
         const product = products[$(this).parent().data("id")]
 
-        $(".view-name").html(`<span>Name: </span>${product.name}`  )
-        $(".view-price").html(`<span>Price: </span>${product.price}` )
-        $(".view-status").html(`<span>Status: </span>${product.status}` )
+        $(".view-name").html(`<span>Name: </span>${product.name}`)
+        $(".view-price").html(`<span>Price: </span>${product.price}`)
+        $(".view-status").html(`<span>Status: </span>${product.status}`)
     })
 
-    $(document).on("click", ".edit", function() {
+    $(document).on("click", ".edit", function () {
         const product = products[$(this).parent().data("id")]
         $("#input-name").val(product.name)
         $("#input-price").val(product.price)
         $("#input-status").val(product.status)
 
-        $("#saveChanges").off("click").click(function() {
+        $("#saveChanges").off("click").click(function () {
             product.name = $("#input-name").val()
             product.price = $("#input-price").val()
             product.status = $("#input-status").val()
@@ -75,10 +75,10 @@ $(document).ready(function () {
         })
     })
 
-    $(document).on("click", ".del", function() {
+    $(document).on("click", ".del", function () {
         const product = $(this).parent()
 
-        $("#deleteChanges").off("click").click(function() {
+        $("#deleteChanges").off("click").click(function () {
             products.splice(product.data("id"), 1)
             product.parent().remove()
             console.log(products)
@@ -87,6 +87,14 @@ $(document).ready(function () {
 
     })
 
-
+    $("#addChanges").off("click").click(function () {
+        const input = $(this).parent().find("input")
+        const name = input[0].value
+        const price = Number(input[1].value)
+        const status = input[2].value
+        const id = products[products.length - 1].id + 1
+        products.push({id, name, price, status})
+        display(products)
+    })
 
 })
